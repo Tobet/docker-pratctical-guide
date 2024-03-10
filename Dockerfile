@@ -1,13 +1,7 @@
-FROM node:14
+FROM python
 
 WORKDIR /app
 
-COPY package.json .
+COPY . /app/
 
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-
-CMD [ "node", "app.mjs" ]
+CMD [ "python", "rng.py" ]
